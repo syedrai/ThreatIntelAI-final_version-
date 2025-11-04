@@ -1,0 +1,5 @@
+ioc,type,reputation_score,malicious_votes,asn,geo_country,label
+8.8.8.8,ip,5,0,15169,US,Low
+malicious-domain.example,domain,85,7,12345,US,High
+phishing.example,domain,60,4,55555,ZZ,Medium
+44d88612fea8a8f36de82e1278abb02f,hash,90,8,0,ZZ,High

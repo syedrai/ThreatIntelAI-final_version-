@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ThreatIntelAI Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>ThreatIntelAI Dashboard</h1>
+  <p>Total IOCs: {{ summary.total }}</p>
+  <p>High risk: {{ summary.high }}</p>
+  {% if rows %}
+  <table>
+    <thead>
+      <tr><th>IOC</th><th>Type</th><th>Risk</th><th>Reputation</th></tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr class="risk-{{ (r.risk|lower) if r.get('risk') else '' }}">
+        <td>{{ r.get('ioc') }}</td>
+        <td>{{ r.get('type') }}</td>
+        <td>{{ r.get('risk','') }}</td>
+        <td>{{ r.get('reputation_score','') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No enriched IOC data yet. Run collect->enrich pipeline.</p>
+  {% endif %}
+</body>
+</html>

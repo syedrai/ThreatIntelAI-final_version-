@@ -1,0 +1,5 @@
+ioc,type
+8.8.8.8,ip
+malicious-domain.example,domain
+https://phishing.example/path,url
+44d88612fea8a8f36de82e1278abb02f,hash
